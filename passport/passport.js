@@ -10,8 +10,9 @@ passport.use(
       clientSecret: "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",
       callbackURL: "http://localhost:4000/auth/google/callback",
     },
-    () => {
-      //callback
+    (accessToken, refreshToken, profile, next) => {
+      console.log("MY PROFILE", profile);
+      next();
     }
   )
 );
